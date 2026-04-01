@@ -5,7 +5,7 @@ import logging
 from sklearn.ensemble import RandomForestClassifier
 import os
 import pickle
-
+import yaml
 
 log_dir="logs"
 dir=os.makedirs(log_dir, exist_ok=True)
@@ -28,7 +28,22 @@ logger.addHandler(console_handler)
 logger.addHandler(file_handler)
 
 
-def train_random_forest_classifier(train_df: pd.DataFrame, test_df: pd.DataFrame,n_estimators: int,random_state: int) -> RandomForestClassifier:
+def load_params(file_path: str) -> dict:
+    """
+    Load parameters from the specified YAML file.
+
+    Args:
+        file_path (str): The path to the YAML file containing the parameters."""
+    
+    try:
+        with open(file_path, "r") as f:
+            params = yaml.safe_load(f)
+        logger.debug(f"Parameters loaded successfully from {file_path}")
+        return params
+    except Exception as e:
+        logger.error(f"Error loading parameters from {file_path}: {e}")
+        raise
+def train_random_forest_classifier(train_df: pd.DataFrame, test_df: pd.DataFrame,params:dict) -> RandomForestClassifier:
     """
     Train a Random Forest Classifier on the training dataset and evaluate it on the testing dataset.
 
@@ -42,7 +57,7 @@ def train_random_forest_classifier(train_df: pd.DataFrame, test_df: pd.DataFrame
         X_test=test_df.drop(columns=['label']).values
         y_test=test_df['label'].values
         
-        rf_classifier=RandomForestClassifier(n_estimators=n_estimators, random_state=random_state)
+        rf_classifier=RandomForestClassifier(n_estimators=params["n_estimators"], random_state=params["random_state"])
         rf_classifier.fit(X_train, y_train)
         
         logger.debug("Random Forest Classifier trained successfully")
@@ -71,10 +86,11 @@ def save_model(model: RandomForestClassifier, file_path: str) -> None:
 
 def main():
     try:
-        metrics={'nestimators':100,'random_state':42}
+        params=load_params('params.yaml')['model_training']
+    
         train_df=pd.read_csv("data/processed/train_tfidf.csv")
         test_df=pd.read_csv("data/processed/test_tfidf.csv")
-        clf=train_random_forest_classifier(train_df,test_df,metrics['nestimators'],metrics['random_state'])  
+        clf=train_random_forest_classifier(train_df,test_df,params)  
 
         save_model(clf,"models/clf_model.pkl")
         logger.debug("Model training and saving completed successfully")  

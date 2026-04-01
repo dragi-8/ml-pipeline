@@ -19,3 +19,18 @@
 2026-04-01 19:08:08,379 - data_ingestion - DEBUG - Data loaded successfully from data\spam.csv
 2026-04-01 19:08:08,385 - data_ingestion - DEBUG - Data preprocessing completed successfully
 2026-04-01 19:08:08,414 - data_ingestion - DEBUG - Data saved successfully to ./data\train.csv and ./data\test.csv
+2026-04-01 19:37:31,261 - data_ingestion - DEBUG - Parameters loaded successfully from params.yaml
+2026-04-01 19:37:31,261 - data_ingestion - DEBUG - Starting data ingestion with data_url=data\spam.csv
+2026-04-01 19:37:31,351 - data_ingestion - DEBUG - Data loaded successfully from data\spam.csv
+2026-04-01 19:37:31,355 - data_ingestion - DEBUG - Data preprocessing completed successfully
+2026-04-01 19:37:31,392 - data_ingestion - DEBUG - Data saved successfully to ./data\train.csv and ./data\test.csv
+2026-04-01 19:48:23,614 - data_ingestion - DEBUG - Parameters loaded successfully from params.yaml
+2026-04-01 19:48:23,615 - data_ingestion - DEBUG - Starting data ingestion with data_url=data\spam.csv
+2026-04-01 19:48:23,630 - data_ingestion - DEBUG - Data loaded successfully from data\spam.csv
+2026-04-01 19:48:23,632 - data_ingestion - DEBUG - Data preprocessing completed successfully
+2026-04-01 19:48:23,667 - data_ingestion - DEBUG - Data saved successfully to ./data\train.csv and ./data\test.csv
+2026-04-01 19:57:03,767 - data_ingestion - DEBUG - Parameters loaded successfully from params.yaml
+2026-04-01 19:57:03,767 - data_ingestion - DEBUG - Starting data ingestion with data_url=data\spam.csv
+2026-04-01 19:57:03,784 - data_ingestion - DEBUG - Data loaded successfully from data\spam.csv
+2026-04-01 19:57:03,793 - data_ingestion - DEBUG - Data preprocessing completed successfully
+2026-04-01 19:57:03,809 - data_ingestion - DEBUG - Data saved successfully to ./data\train.csv and ./data\test.csv

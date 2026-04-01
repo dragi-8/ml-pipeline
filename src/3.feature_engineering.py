@@ -4,6 +4,7 @@ import logging
 #import tfidf_vectorizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 import os
+import yaml
 
 
 log_dir="logs"
@@ -26,6 +27,22 @@ file_handler.setFormatter(formatter)
 logger.addHandler(console_handler)
 logger.addHandler(file_handler)
 
+
+def load_params(file_path: str) -> dict:
+    """
+    Load parameters from the specified YAML file.
+
+    Args:
+        file_path (str): The path to the YAML file containing the parameters."""
+    
+    try:
+        with open(file_path, "r") as f:
+            params = yaml.safe_load(f)
+        logger.debug(f"Parameters loaded successfully from {file_path}")
+        return params
+    except Exception as e:
+        logger.error(f"Error loading parameters from {file_path}: {e}")
+        raise
 
 def load_data(file_path:str) -> pd.DataFrame:
     """
@@ -94,12 +111,14 @@ def save_data(df: pd.DataFrame, file_path: str) -> None:
 
 def main():
     try:
+        params=load_params('params.yaml')
+        max_features=params['feature_engineering']['max_features']
         train_file="data/train_preprocessed.csv"
         test_file="data/test_preprocessed.csv"
         logger.debug(f"Starting feature engineering with train_file={train_file} and test_file={test_file}")
         train_df=load_data(train_file)
         test_df=load_data(test_file)
-        x_train_tfidf, x_test_tfidf=apply_tfidf_vectorization(train_df, test_df, max_features=50)
+        x_train_tfidf, x_test_tfidf=apply_tfidf_vectorization(train_df, test_df, max_features=max_features)
         save_data(pd.DataFrame(x_train_tfidf), os.path.join('data','processed','train_tfidf.csv'))
         save_data(pd.DataFrame(x_test_tfidf), os.path.join('data','processed','test_tfidf.csv'))
         logger.debug("Feature engineering completed and saved successfully")

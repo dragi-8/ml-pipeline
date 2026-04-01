@@ -4,6 +4,11 @@ import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 import logging
+import yaml
+
+with open("params.yaml", "r") as f:
+    params = yaml.safe_load(f)
+
 
 log_dir="logs"
 dir=os.makedirs(log_dir, exist_ok=True)
@@ -24,6 +29,22 @@ file_handler.setFormatter(formatter)
 
 logger.addHandler(console_handler)
 logger.addHandler(file_handler)
+
+def load_params(file_path: str) -> dict:
+    """
+    Load parameters from the specified YAML file.
+
+    Args:
+        file_path (str): The path to the YAML file containing the parameters."""
+    
+    try:
+        with open(file_path, "r") as f:
+            params = yaml.safe_load(f)
+        logger.debug(f"Parameters loaded successfully from {file_path}")
+        return params
+    except Exception as e:
+        logger.error(f"Error loading parameters from {file_path}: {e}")
+        raise
 
 def load_data(data_url:str) -> pd.DataFrame:
     """
@@ -81,7 +102,8 @@ def save_data(train_df: pd.DataFrame, test_df: pd.DataFrame,file_loc:str) -> Non
 
 def main():
     try:
-        test_size=0.2
+        params=load_params("params.yaml")
+        test_size=params["ingestion"]["test_size"]
         data_url="data\spam.csv"
         
         logger.debug(f"Starting data ingestion with data_url={data_url}")
