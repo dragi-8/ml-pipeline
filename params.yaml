@@ -1,9 +1,9 @@
 ingestion:
-   test_size: 0.30
+   test_size: 0.32
 
 feature_engineering:
-   max_features: 565
+   max_features: 66
 
 model_training:
    random_state: 2
-   n_estimators: 86 
+   n_estimators: 120

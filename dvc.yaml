@@ -49,3 +49,10 @@ stages:
     - src/5.model_evaluation.py
     outs:
     - metrics/metrics.json
+params:
+- dvclive/params.yaml
+metrics:
+- dvclive/metrics.json
+plots:
+- dvclive/plots/metrics:
+    x: step

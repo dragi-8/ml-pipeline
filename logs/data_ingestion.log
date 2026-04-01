@@ -34,3 +34,8 @@
 2026-04-01 19:57:03,784 - data_ingestion - DEBUG - Data loaded successfully from data\spam.csv
 2026-04-01 19:57:03,793 - data_ingestion - DEBUG - Data preprocessing completed successfully
 2026-04-01 19:57:03,809 - data_ingestion - DEBUG - Data saved successfully to ./data\train.csv and ./data\test.csv
+2026-04-01 20:13:01,331 - data_ingestion - DEBUG - Parameters loaded successfully from params.yaml
+2026-04-01 20:13:01,332 - data_ingestion - DEBUG - Starting data ingestion with data_url=data\spam.csv
+2026-04-01 20:13:01,345 - data_ingestion - DEBUG - Data loaded successfully from data\spam.csv
+2026-04-01 20:13:01,347 - data_ingestion - DEBUG - Data preprocessing completed successfully
+2026-04-01 20:13:01,377 - data_ingestion - DEBUG - Data saved successfully to ./data\train.csv and ./data\test.csv
