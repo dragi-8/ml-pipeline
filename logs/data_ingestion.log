@@ -1,0 +1,6 @@
+2026-04-01 16:53:40,544 - data_ingestion - DEBUG - Starting data ingestion with data_url=https://raw.githubusercontent.com/dragi-8/ml-pipeline/refs/heads/main/spam.csv?token=GHSAT0AAAAAADZAZ45HYJGG632L6PQJPVJG2ONA3TQ   
+2026-04-01 16:53:42,071 - data_ingestion - ERROR - Error loading data from https://raw.githubusercontent.com/dragi-8/ml-pipeline/refs/heads/main/spam.csv?token=GHSAT0AAAAAADZAZ45HYJGG632L6PQJPVJG2ONA3TQ   : HTTP Error 404: Not Found
+2026-04-01 16:53:42,071 - data_ingestion - ERROR - Error in main function: HTTP Error 404: Not Found
+2026-04-01 16:57:34,679 - data_ingestion - DEBUG - Starting data ingestion with data_url=https://raw.githubusercontent.com/dragi-8/ml-pipeline/main/spam.csv
+2026-04-01 16:57:35,372 - data_ingestion - ERROR - Error loading data from https://raw.githubusercontent.com/dragi-8/ml-pipeline/main/spam.csv: HTTP Error 404: Not Found
+2026-04-01 16:57:35,374 - data_ingestion - ERROR - Error in main function: HTTP Error 404: Not Found
