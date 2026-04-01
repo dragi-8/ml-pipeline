@@ -4,3 +4,18 @@
 2026-04-01 16:57:34,679 - data_ingestion - DEBUG - Starting data ingestion with data_url=https://raw.githubusercontent.com/dragi-8/ml-pipeline/main/spam.csv
 2026-04-01 16:57:35,372 - data_ingestion - ERROR - Error loading data from https://raw.githubusercontent.com/dragi-8/ml-pipeline/main/spam.csv: HTTP Error 404: Not Found
 2026-04-01 16:57:35,374 - data_ingestion - ERROR - Error in main function: HTTP Error 404: Not Found
+2026-04-01 17:10:10,960 - data_ingestion - DEBUG - Starting data ingestion with data_url=spam.csv
+2026-04-01 17:10:10,966 - data_ingestion - ERROR - Error loading data from spam.csv: [Errno 2] No such file or directory: 'spam.csv'
+2026-04-01 17:10:10,967 - data_ingestion - ERROR - Error in main function: [Errno 2] No such file or directory: 'spam.csv'
+2026-04-01 17:10:35,571 - data_ingestion - DEBUG - Starting data ingestion with data_url=data\spam.csv
+2026-04-01 17:10:35,637 - data_ingestion - DEBUG - Data loaded successfully from data\spam.csv
+2026-04-01 17:10:35,659 - data_ingestion - DEBUG - Data preprocessing completed successfully
+2026-04-01 17:10:35,714 - data_ingestion - DEBUG - Data saved successfully to ./data\train.csv and ./data\test.csv
+2026-04-01 17:25:21,910 - data_ingestion - DEBUG - Starting data ingestion with data_url=data\spam.csv
+2026-04-01 17:25:21,941 - data_ingestion - DEBUG - Data loaded successfully from data\spam.csv
+2026-04-01 17:25:21,945 - data_ingestion - DEBUG - Data preprocessing completed successfully
+2026-04-01 17:25:21,972 - data_ingestion - DEBUG - Data saved successfully to ./data\train.csv and ./data\test.csv
+2026-04-01 19:08:08,357 - data_ingestion - DEBUG - Starting data ingestion with data_url=data\spam.csv
+2026-04-01 19:08:08,379 - data_ingestion - DEBUG - Data loaded successfully from data\spam.csv
+2026-04-01 19:08:08,385 - data_ingestion - DEBUG - Data preprocessing completed successfully
+2026-04-01 19:08:08,414 - data_ingestion - DEBUG - Data saved successfully to ./data\train.csv and ./data\test.csv

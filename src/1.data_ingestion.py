@@ -25,7 +25,7 @@ file_handler.setFormatter(formatter)
 logger.addHandler(console_handler)
 logger.addHandler(file_handler)
 
-def load_data(data_url: str) -> pd.DataFrame:
+def load_data(data_url:str) -> pd.DataFrame:
     """
     Load the dataset from the specified file path.
 
@@ -82,7 +82,7 @@ def save_data(train_df: pd.DataFrame, test_df: pd.DataFrame,file_loc:str) -> Non
 def main():
     try:
         test_size=0.2
-        data_url="https://raw.githubusercontent.com/dragi-8/ml-pipeline/main/spam.csv"
+        data_url="data\spam.csv"
         
         logger.debug(f"Starting data ingestion with data_url={data_url}")
         df=load_data(data_url)
